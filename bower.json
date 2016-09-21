@@ -1,0 +1,13 @@
+{
+  "name": "evtrs-site",
+  "version": "0.0.1",
+  "dependencies": {
+     "waypoints": "~4.0.0"
+  },
+  "devDependencies": {
+
+  },
+  "resolutions": {
+
+  }
+}
