@@ -12,12 +12,9 @@ module.exports = function (grunt) {
     require('jit-grunt')(grunt, {
         express: 'grunt-express-server',
         useminPrepare: 'grunt-usemin',
-        ngtemplates: 'grunt-angular-templates',
         cdnify: 'grunt-google-cdn',
-        protractor: 'grunt-protractor-runner',
         injector: 'grunt-asset-injector',
         buildcontrol: 'grunt-build-control',
-        ngconstant: 'grunt-ng-constant'
     });
 
     // Time how long tasks take. Can help when optimizing build times
@@ -290,49 +287,6 @@ module.exports = function (grunt) {
 //            }
 //        },
 
-        // Allow the use of non-minsafe AngularJS files. Automatically makes it
-        // minsafe compatible so Uglify does not destroy the ng references
-        ngAnnotate: {
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '.tmp/concat',
-                        src: '*/**.js',
-                        dest: '.tmp/concat'
-                    }
-                ]
-            }
-        },
-
-        // Package all the html partials into a single javascript payload
-        ngtemplates: {
-            options: {
-                // This should be the name of your apps angular module
-                module: 'evtrs-site',
-                htmlmin: {
-                    collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
-                    removeAttributeQuotes: true,
-                    removeEmptyAttributes: true,
-                    removeRedundantAttributes: true,
-                    removeScriptTypeAttributes: true,
-                    removeStyleLinkTypeAttributes: true
-                },
-                usemin: 'app/app.js'
-            },
-            main: {
-                cwd: '<%= yeoman.client %>',
-                src: ['{app,components}/**/*.html'],
-                dest: '.tmp/templates.js'
-            },
-            tmp: {
-                cwd: '.tmp',
-                src: ['{app,components}/**/*.html'],
-                dest: '.tmp/tmp-templates.js'
-            }
-        },
-
         // Replace Google CDN references
         cdnify: {
             dist: {
@@ -401,12 +355,6 @@ module.exports = function (grunt) {
                     remote: 'git@heroku.com:eventures.git',
                     branch: 'master'
                 }
-            },
-            openshift: {
-                options: {
-                    remote: 'openshift',
-                    branch: 'master'
-                }
             }
         },
 
@@ -432,33 +380,6 @@ module.exports = function (grunt) {
             ]
         },
 
-        // Test settings
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js',
-                singleRun: true
-            }
-        },
-
-        mochaTest: {
-            options: {
-                reporter: 'spec'
-            },
-            src: ['server/**/*.spec.js']
-        },
-
-        protractor: {
-            options: {
-                configFile: 'protractor.conf.js'
-            },
-            chrome: {
-                options: {
-                    args: {
-                        browser: 'chrome'
-                    }
-                }
-            }
-        },
 
         env: {
             test: {
@@ -516,30 +437,6 @@ module.exports = function (grunt) {
                     ]
                 }
             }
-        },
-        ngconstant: {
-            options: {
-                space: '  ',
-                wrap: '"use strict";\n\n {%= __ngModule %}',
-                name: 'evtrs-config',
-                dest: '<%= yeoman.client %>/app/config.js'
-            },
-            development: {
-                constants: {
-                    CONF: {
-                        name: 'development',
-                        WP_URL: 'http://localhost/wp-json'
-                    }
-                }
-            },
-            production: {
-                constants: {
-                    CONF: {
-                        name: 'production',
-                        WP_URL: 'http://178.62.6.16/wp-json'
-                    }
-                }
-            }
         }
     });
 
@@ -579,7 +476,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'env:all',
-            'ngconstant:development',
             'concurrent:server',
             'injector',
             'wiredep',
@@ -640,13 +536,10 @@ module.exports = function (grunt) {
         'clean:dist',
         'concurrent:dist',
         'injector',
-        'ngconstant:production',
         'wiredep',
         'useminPrepare',
         'autoprefixer',
-        'ngtemplates',
         'concat',
-        'ngAnnotate',
         'copy:dist',
         'cdnify',
         'cssmin',
