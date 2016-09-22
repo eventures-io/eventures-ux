@@ -13,6 +13,16 @@
     padding: 0;
 }
 
+
+.menu ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul a:hover {
+    color: white;
+}
+
 .menu ul li {
    margin: 5px 20px;
 }
@@ -20,7 +30,6 @@
 
 .content {
     position: relative;
-    background-color: brown;
     height: calc(100vh - 30px);
 }
 

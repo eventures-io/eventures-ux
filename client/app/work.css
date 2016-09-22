@@ -1,0 +1,30 @@
+.project {
+    position: relative;
+    margin: 10px 20%;
+    height: 20vh;
+    border: 1px solid gray;
+}
+
+.project-wrap {
+    margin-bottom: 30px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.read-btn {
+    float: right;
+    padding: 5px;
+    color: black;
+}
+
+.read-button .expanded {
+    height: 100%;
+}
