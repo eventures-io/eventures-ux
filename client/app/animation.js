@@ -10,5 +10,5 @@ window.addEventListener('load', function() {
         bottomShadow:'linear-gradient(rgba(white,.3), black)'
     });
 
-    $('.paperfold-toggle').click(paperfold.toggle);
+    $('.menu').click(paperfold.toggle);
 });

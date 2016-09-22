@@ -16,14 +16,18 @@ module.exports = function (app) {
     app.route('/:url(api|auth|components|app|bower_components|assets|form-builder)/*')
         .get(errors[404]);
 
+    app.route('/about')
+        .get(function (req, res) {
+            res.sendfile(app.get('appPath') + '/about.html');
+        });
+
     // All other routes should redirect to the index.html
-    app.route('/*')
+    app.route('/')
         .get(function (req, res) {
             res.sendfile(app.get('appPath') + '/index.html');
         });
 
-    app.route('/plantzr-framer')
-        .get(function (req, res) {
-            res.sendfile(app.get('appPath') + 'form-builder/index.html');
-        });
+    app.route('/*')
+        .get(errors[404]);
+
 };

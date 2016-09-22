@@ -1,5 +1,43 @@
-.paperfold {
+.menu {
+    width: 100vw;
+    background-color: black;
+    color: white;
+    height: 30px;
+}
 
+.menu ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+   margin: 5px 20px;
+}
+
+
+.content {
+    position: relative;
+    background-color: brown;
+    height: calc(100vh - 30px);
+}
+
+.content .work {
+
+
+}
+
+.content .about {
+
+}
+
+.content .contact {
+
+}
+
+.paperfold {
     display: block;
     position: relative;
     overflow: hidden;
@@ -8,12 +46,11 @@
 }
 
 .fold {
-    border: 1px solid white;
     height: 80px;
     background: black;
 }
 
 p {
     margin: 0;
-    padding: 0;
+    padding: 5px;
 }
