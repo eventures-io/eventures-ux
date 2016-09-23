@@ -1,73 +1,86 @@
-<article class="project">
-    <div class="project-wrap polestar">
-        <p>
-            Polestar solutions wants to provide customers with additional layers to their existing weather maps. The
-            weather+ service will display maps with ocean wave and -current models.
-        </p>
-        <p>
-            The existing solution is based on an list of select boxes contained in an accordion layout container. For
-            the
-            new weather layers, they chose to add two more elements to the accordion.
-            The design looked like <span class="image-link" onclick="openImageModal('weather-layers')">this</span>.
-        </p>
+<section class="work-section">
 
-        <p>
-            This design presents a number of usability issues:
+    <article class="project">
+        <div class="project-title">Polestar</div>
+        <div class="project-wrap polestar">
+            <p>
+                Polestar solutions wants to provide customers with additional layers to their existing weather maps. The
+                weather+ service will display maps with ocean wave and -current models.
+            </p>
+            <p>
+                The existing solution is based on an list of select boxes contained in an accordion layout container.
+                For
+                the
+                new weather layers, they chose to add two more elements to the accordion.
+                <span class="image-link" onclick="openImageModal('polestar-1')">The design looked like this</span>.
+            </p>
 
-            The user cannot see at a glance which layers are selected, as they are either hidden by a collapsed state of
-            the
-            container element, or because the accordion element overflows in it’s container and the user needs to scroll
-            them into view.
+            <p>
+                This design presents a number of usability issues:
 
-            This violates basic heuristics: Visibility of system status. It increases cognitive load, and requires
-            additional actions from the user.
+                The user cannot see at a glance which layers are selected, as they are either hidden by a collapsed
+                state of
+                the
+                container element, or because the accordion element overflows in it’s container and the user needs to
+                scroll
+                them into view.
 
-            The first layer is selected by clicking a radio button, styled as a mechanical switch. This is neither
-            consistent nor intuitive. It makes the user think: What happens if I push that button? Is it some sort of
-            filter? Why is different from the other layer selections?
+                This violates basic heuristics: Visibility of system status. It increases cognitive load, and requires
+                additional actions from the user.
+
+                The first layer is selected by clicking a radio button, styled as a mechanical switch. This is neither
+                consistent nor intuitive. It makes the user think: What happens if I push that button? Is it some sort
+                of
+                filter? Why is different from the other layer selections?
 
 
-            Similarly, the layers from the currents group are selected by pressing radio buttons.
-            This violates the ‘Consistency and standards’ heuristic, and the ‘don’t make me think’ principle.
-        </p>
+                Similarly, the layers from the currents group are selected by pressing radio buttons.
+                This violates the ‘Consistency and standards’ heuristic, and the ‘don’t make me think’ principle.
+            </p>
 
-        <p>
-            In a first attempt to address these problems, I proposed to add the list of selected layers above the
-            accordion
-            element, in the form of clickable buttons, and remove the selected layers from the selectable list. The
-            accordion
-            can only have one element open at the time, which eliminates the need to scroll. All layers are also
-            consistently
-            selectable by a select box.
-            The improved version looked like this.
-        </p>
+            <p>
+                In a first attempt to address these problems, I proposed to add the list of selected layers above the
+                accordion
+                element, in the form of clickable buttons, and remove the selected layers from the selectable list. The
+                accordion
+                can only have one element open at the time, which eliminates the need to scroll. All layers are also
+                consistently
+                selectable by a select box.
+                <span class="image-link"
+                      onclick="openImageModal('polestar-2')">The improved version looked like this</span>.
 
-        <p>
-            This design improves on the previous, but is still not user friendly.
-            There are separate sliders for each weather group, and even if the system state is visible at all times, it
-            is hard to read. In short, the screen is to complex.
-        </p>
+            </p>
 
-        <p>
-            A better solution was required.
-            The reason the selection status is hard to read is because the selected layers are displayed inside their
-            proper group container.
-            It would be better to move all selected layers to the top, so they become more apparent.
-            Also, there is no need to have separate sliders for each group, as it would not make sense to overlay maps
-            from different time frames.
-            Given that the accordion headers take up so much vertical space, the accordion is to be replaced by a
-            carousel.
+            <p>
+                This design improves on the previous, but is still not user friendly.
+                There are separate sliders for each weather group, and even if the system state is visible at all times,
+                it
+                is hard to read. In short, the screen is to complex.
+            </p>
 
-            The final design eliminates all issues with previous versions, and offers added flexibility to navigate
-            through the layer groups (Use of group icon buttons and previous/next buttons).
-            It also allows more groups to be added later on without negatively impacting usability.
+            <p>
+                A better solution was required.
+                The reason the selection status is hard to read is because the selected layers are displayed inside
+                their
+                proper group container.
+                It would be better to move all selected layers to the top, so they become more apparent.
+                Also, there is no need to have separate sliders for each group, as it would not make sense to overlay
+                maps
+                from different time frames.
+                Given that the accordion headers take up so much vertical space, the accordion is to be replaced by a
+                carousel.
 
-            Visual: The application screen with graphic design.
-        </p>
+                The final design eliminates all issues with previous versions, and offers added flexibility to navigate
+                through the layer groups (Use of group icon buttons and previous/next buttons).
+                It also allows more groups to be added later on without negatively impacting usability.
 
-    </div>
-    <div class="read-more">
-        <span class="read-btn polestar">read more</span>
-    </div>
-</article>
+                Visual: The application screen with graphic design. (Or animated prototype).
+            </p>
 
+        </div>
+        <div class="read-more">
+            <span class="read-btn polestar">read more</span>
+        </div>
+    </article>
+
+</section>

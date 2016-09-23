@@ -3,11 +3,23 @@
 .project {
     position: relative;
     /*TODO center & media queries*/
-    margin: 10px 20%;
+    margin: 60px 20%;
     padding: 15px;
     height: 100%;
     border: 2px solid gray;
     border-radius: 8px;
+}
+
+.project-title {
+    position: absolute;
+    top: -23px;
+    right: 0;
+    padding-right: 30px;
+    //font-family: 'Raleway', sans-serif;
+    color: #d80000;
+    font-size: x-large;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .project-wrap {
