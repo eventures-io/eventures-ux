@@ -1,18 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Mono|Peddana);
+
+body {
+    color: #474747;
+    font-family: 'Roboto', serif;
+    font-size: larger;
+    background-color: rgba(255, 247, 214, 0.40);
+}
+
 .menu {
     width: 100vw;
     background-color: black;
     color: white;
-    height: 30px;
+    height: 40px;
+    margin-right: 30px;
+    font-family: 'Roboto', serif;
+
 }
 
 .menu ul {
     display: flex;
     justify-content: flex-end;
     list-style: none;
-    margin: 0;
+    margin: 0 3em 0 0;
     padding: 0;
 }
-
 
 .menu ul a {
     color: white;
@@ -24,9 +35,8 @@
 }
 
 .menu ul li {
-   margin: 5px 20px;
+    margin: 5px 20px;
 }
-
 
 .content {
     position: relative;
@@ -34,7 +44,6 @@
 }
 
 .content .work {
-
 
 }
 
@@ -51,15 +60,17 @@
     position: relative;
     overflow: hidden;
     color: white;
+    font-family: 'Roboto Mono', serif;
     font-size: 30px;
+
 }
 
 .fold {
-    height: 80px;
+    height: 140px;
     background: black;
 }
 
-p {
+.fold p {
     margin: 0;
-    padding: 5px;
+    padding: 15px 20px 0px 40px;
 }
