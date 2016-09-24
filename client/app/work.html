@@ -4,38 +4,42 @@
         <div class="project-title">Polestar</div>
         <div class="project-wrap polestar">
             <p>
-                Polestar solutions wants to provide customers with additional layers to their existing weather maps. The
-                weather+ service will display maps with ocean wave and -current models.
-            </p>
-            <p>
+                | Polestar Space Solutions wants to provide customers with additional layers to their existing weather
+                maps.<br/>
+                The new weather+ service will display maps with ocean wave and current models.
+                <br/>
                 The existing solution is based on an list of select boxes contained in an accordion layout container.
-                For
-                the
-                new weather layers, they chose to add two more elements to the accordion.
-                <span class="image-link" onclick="openImageModal('polestar-1')">The design looked like this</span>.
+                For the new weather layers, Polestar chose to add two more elements to the accordion.
+                <br/>
+                <span class="image-link" onclick="openImageModal('polestar-bw-1')">Their design looked like this</span>.
             </p>
 
             <p>
-                This design presents a number of usability issues:
+                This approach presents a number of usability issues:
+            <ol>
+                <li>The user cannot see at a glance which layers are selected, as they are either hidden by a collapsed
+                    state of
+                    the container element, or because the accordion element overflows in it’s container and the user
+                    needs to
+                    scroll them into view.
 
-                The user cannot see at a glance which layers are selected, as they are either hidden by a collapsed
-                state of
-                the
-                container element, or because the accordion element overflows in it’s container and the user needs to
-                scroll
-                them into view.
+                    This violates basic heuristics: Visibility of system status. It increases cognitive load, and
+                    requires additional
+                    actions from the user.
+                </li>
+                <li>
+                    The first layer is selected by clicking a radio button, styled as a mechanical switch. This is
+                    neither consistent
+                    nor intuitive. It makes the user think: What happens if I push that button? Is it some sort of
+                    filter?
+                    Why is different from the other layer selections?
+                </li>
 
-                This violates basic heuristics: Visibility of system status. It increases cognitive load, and requires
-                additional actions from the user.
-
-                The first layer is selected by clicking a radio button, styled as a mechanical switch. This is neither
-                consistent nor intuitive. It makes the user think: What happens if I push that button? Is it some sort
-                of
-                filter? Why is different from the other layer selections?
-
-
-                Similarly, the layers from the currents group are selected by pressing radio buttons.
-                This violates the ‘Consistency and standards’ heuristic, and the ‘don’t make me think’ principle.
+                <li>
+                    Similarly, the layers from the currents group are selected by pressing radio buttons.
+                    This violates the ‘Consistency and standards’ heuristic, and the ‘don’t make me think’ principle.
+                </li>
+            </ol>
             </p>
 
             <p>
@@ -46,6 +50,7 @@
                 can only have one element open at the time, which eliminates the need to scroll. All layers are also
                 consistently
                 selectable by a select box.
+                <br/>
                 <span class="image-link"
                       onclick="openImageModal('polestar-2')">The improved version looked like this</span>.
 
@@ -54,25 +59,30 @@
             <p>
                 This design improves on the previous, but is still not user friendly.
                 There are separate sliders for each weather group, and even if the system state is visible at all times,
-                it
-                is hard to read. In short, the screen is to complex.
+                it is hard to read.
+                <br/>
+                In short, the screen is to complex.
             </p>
 
             <p>
                 A better solution was required.
+                <br/>
                 The reason the selection status is hard to read is because the selected layers are displayed inside
-                their
-                proper group container.
+                their proper group container. <br/>
                 It would be better to move all selected layers to the top, so they become more apparent.
+                <br/>
                 Also, there is no need to have separate sliders for each group, as it would not make sense to overlay
-                maps
-                from different time frames.
+                maps from different time frames.
+                <br/>
                 Given that the accordion headers take up so much vertical space, the accordion is to be replaced by a
                 carousel.
-
-                The final design eliminates all issues with previous versions, and offers added flexibility to navigate
+                <br/>
+                <span class="image-link" onclick="openImageModal('polestar-3')">The final design </span>
+                eliminates all issues with previous versions, and offers added flexibility to navigate
                 through the layer groups (Use of group icon buttons and previous/next buttons).
                 It also allows more groups to be added later on without negatively impacting usability.
+                The reclaimed vertical space can be used to add a filter field.
+                <br/>
 
                 Visual: The application screen with graphic design. (Or animated prototype).
             </p>
