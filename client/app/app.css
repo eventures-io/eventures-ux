@@ -3,7 +3,7 @@
 body {
     color: #474747;
     font-family: 'Roboto', serif;
-    font-size: larger;
+
 }
 
 .menu {
@@ -57,12 +57,12 @@ body {
     overflow: hidden;
     color: white;
     font-family: 'Roboto Mono', serif;
-    font-size: 30px;
+    font-size: x-large;
 
 }
 
 .fold {
-    height: 140px;
+    height: 100px;
     background: black;
 }
 

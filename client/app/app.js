@@ -7,18 +7,39 @@ function openImageModal(imageName) {
     });
 };
 
-function toggleButtonText(element) {
-    var buttonText = element.html() === 'read more' ? 'close' : 'read more';
-    element.html(buttonText);
+function setCollapseButtonText(element, stateClosed) {
+    if (stateClosed) {
+        element.html('read more');
+    } else {
+        element.html('close');
+    }
 };
+
+function collapseOpenProjects() {
+    $('.project-wrap').each(function () {
+        if ($(this).hasClass('expanded')) {
+            $(this).removeClass('expanded');
+            setCollapseButtonText($(this).parent().find('.read-btn'), true);
+        }
+    })
+}
 
 function navigate(section) {
 
     $('.main').load('app/' + section + '.html', function () {
         if (section === 'work') {
-            $('.read-btn.polestar').click(function () {
-                $('.project-wrap.polestar').toggleClass('expanded');
-                toggleButtonText($('.read-btn.polestar'));
+            $('.read-btn').click(function (event) {
+                var project = $(event.target).data('project');
+                var collapseButton = $('.read-btn.' + project);
+                var projectWrap = $('.project-wrap.' + project);
+                if (projectWrap.hasClass('expanded')) {
+                    projectWrap.removeClass('expanded');
+                    setCollapseButtonText($(this), true);
+                } else {
+                    collapseOpenProjects();
+                    projectWrap.addClass('expanded');
+                    setCollapseButtonText($(this), false);
+                }
             });
         }
     });

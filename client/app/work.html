@@ -3,7 +3,7 @@
     <article class="project">
         <div class="project-title">Polestar</div>
         <div class="project-wrap polestar">
-            <p>
+            <p class="project-header">
                 | Polestar Space Solutions wants to provide customers with additional layers to their existing weather
                 maps.<br/>
                 The new weather+ service will display maps with ocean wave and current models.
@@ -11,7 +11,7 @@
                 The existing solution is based on an list of select boxes contained in an accordion layout container.
                 For the new weather layers, Polestar chose to add two more elements to the accordion.
                 <br/>
-                <span class="image-link" onclick="openImageModal('polestar-bw-1')">Their design looked like this</span>.
+                <span class="image-link" onclick="openImageModal('polestar-bw-1')">The design looked like this</span>.
             </p>
 
             <p>
@@ -61,12 +61,10 @@
                 There are separate sliders for each weather group, and even if the system state is visible at all times,
                 it is hard to read.
                 <br/>
-                In short, the screen is to complex.
+                In short, the screen is to complex.A better solution was required.
             </p>
 
             <p>
-                A better solution was required.
-                <br/>
                 The reason the selection status is hard to read is because the selected layers are displayed inside
                 their proper group container. <br/>
                 It would be better to move all selected layers to the top, so they become more apparent.
@@ -89,8 +87,33 @@
 
         </div>
         <div class="read-more">
-            <span class="read-btn polestar">read more</span>
+            <span class="read-btn" data-project="polestar">read more</span>
         </div>
     </article>
+
+
+    <article class="project">
+        <div class="project-title">VRT</div>
+        <div class="project-wrap vrt">
+
+            <p class="project-header">| VRT wants to optimize their news editing process. Some manual tasks (like
+                classification,
+                summarization) needs to be automated, and the workflow must be centralized by using one single
+                application across all newsrooms.
+            </p>
+            <p>
+                News coming in from news agencies (Reuters, AFP, AP) or correspondents is picked up by an automated
+                process which inserts metadata (tags, summary, location…), and stores the information in a central
+                database.
+
+                <span class="image-link" onclick="openImageModal('wireframe-vrt')">Wireframe </span>
+            </p>
+
+        </div>
+        <div class="read-more">
+            <span class="read-btn" data-project="vrt">read more</span>
+        </div>
+    </article>
+
 
 </section>
