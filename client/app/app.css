@@ -1,9 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Mono|Exo+2:900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Mono|Coda);
 
 body {
     color: #474747;
     font-family: 'Roboto', serif;
 
+}
+
+.page-header {
+    position: fixed;
+    top:0;
+    left: 0;
+    max-width: 100vw;
+    z-index: 999;
 }
 
 .menu {
@@ -34,22 +42,16 @@ body {
 }
 
 
-.content {
-    position: relative;
-    height: calc(100vh - 30px);
+.main {
+    margin-top: 160px;
+    transition: margin .8s ease;
 }
 
-.content .work {
-
+.main.fold-closed {
+    margin-top: 60px;
 }
 
-.content .about {
 
-}
-
-.content .contact {
-
-}
 
 .paperfold {
     display: block;

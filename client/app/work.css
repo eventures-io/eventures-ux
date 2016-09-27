@@ -1,6 +1,7 @@
 /* TODO use em's*/
+/* TODO use -js classes for selectors used in code */
 
-.project {
+.project-pane {
     position: relative;
     /*TODO center & media queries*/
     margin: 60px 20%;
@@ -9,37 +10,33 @@
     line-height: 1.3em;
 }
 
-.project p:first-of-type {
-
-}
-
 .project-title {
     display: flex;
     justify-content: flex-end;
-    font-family: 'Exo 2', sans-serif;
-    color: #aaaaaa;
-    font-size: xx-large;
-    font-weight: 900;
+    font-family: 'Coda', serif;
+    color: grey;
+    font-size: x-large;
+    font-weight: bold;
     z-index: -1;
 }
 
-.project-wrap {
+.project-main {
     max-height: 20vh;
     overflow: hidden;
     pointer-events: none;
 }
 
-.project-wrap > p {
+.project-main > p {
     margin-left: 3em;
 
 }
 
-.project-wrap > ol {
+.project-main > ol {
     margin-left: 3em;
 
 }
 
-.project-wrap > ol > li {
+.project-main > ol > li {
     padding-bottom: 0.5em;
 
 }
@@ -49,18 +46,19 @@
 }
 
 .project-header::first-letter {
-    font-size: 40px;
-    color: #3174c0;
-    font-family: 'Exo 2', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Coda', serif;
 }
 
-.project-wrap.expanded {
+.project-main.expanded {
     max-height: 100%;
     pointer-events: auto;
 }
 
 .read-more {
-    margin: 0 20% 0 30%;
+    margin: 0 5% 0 40%;
     border-bottom: 1px solid gray;
 
 }
@@ -81,15 +79,13 @@
 
 .image-link {
     margin-top: 2px;
-    border-bottom: 1px solid #3174c0;
+    border-bottom: 1px solid gray;
     line-height: 0.9em;
-/ / color: #3174c0;
-/ / font-style: italic;
     cursor: pointer;
 }
 
 .image-link:hover {
-    border-bottom: 1px solid #3174c0;
+    border-bottom: 2px dashed gray;
 }
 
 /* TODO media query for mobile */
@@ -107,5 +103,5 @@
 }
 
 .close-icon.visible {
-   visibility: visible;
+    visibility: visible;
 }

@@ -24,7 +24,7 @@ function setCloseIconVisible(parentElement, stateVisible) {
 }
 
 function collapseOpenProjects() {
-    $('.project-wrap').each(function () {
+    $('.project-main').each(function () {
         if ($(this).hasClass('expanded')) {
             $(this).removeClass('expanded');
             setCollapseButtonText($(this).parent().find('.read-btn'), true);
@@ -33,8 +33,6 @@ function collapseOpenProjects() {
     })
 }
 
-
-
 function navigate(section) {
 
     $('.main').load('app/' + section + '.html', function () {
@@ -42,16 +40,16 @@ function navigate(section) {
             $('.read-btn').click(function (event) {
                 var project = $(event.target).data('project');
                 var collapseButton = $('.read-btn.' + project);
-                var projectWrap = $('.project-wrap.' + project);
-                if (projectWrap.hasClass('expanded')) {
-                    projectWrap.removeClass('expanded');
+                var projectMain = $('.project-main.' + project);
+                if (projectMain.hasClass('expanded')) {
+                    projectMain.removeClass('expanded');
                     setCollapseButtonText($(this), true);
-                    setCloseIconVisible(projectWrap.parent(), false);
+                    setCloseIconVisible(projectMain.parent(), false);
                 } else {
                     collapseOpenProjects();
-                    projectWrap.addClass('expanded');
+                    projectMain.addClass('expanded');
                     setCollapseButtonText($(this), false);
-                    setCloseIconVisible(projectWrap.parent(), true);
+                    setCloseIconVisible(projectMain.parent(), true);
                 }
             });
 
@@ -69,6 +67,38 @@ $(document).ready(function () {
 
     navigate('work');
 
+    var didScroll = false;
+    var lastFromTop =  0;
+    var isPaperfoldClosed = false;
+
+    $(window).scroll(function() {
+        didScroll = true;
+    });
+
+    setInterval(function(event) {
+        if ( didScroll ) {
+            didScroll = false;
+            var fromTop = $(this).scrollTop();
+
+            var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
+            lastFromTop = fromTop;
+            console.log('from top: ' + fromTop + 'direction: ' + scrollDirection );
+            if(fromTop <= 30 && scrollDirection === 'down' && isPaperfoldClosed) {
+                paperfold.open();
+                isPaperfoldClosed = false;
+                $('.main').removeClass('fold-closed');
+                return false;
+            }
+
+            if (fromTop > 30 && scrollDirection ===  'up' && !isPaperfoldClosed) {
+                paperfold.close();
+                $('.main').addClass('fold-closed');
+                isPaperfoldClosed = true;
+            }
+
+        }
+    }, 250);
+
     $('.menu-link').on('click', function (event) {
         event.preventDefault();
         var section = $(event.target).data('section');
@@ -79,7 +109,7 @@ $(document).ready(function () {
 
 
     var paperfold = $('.paperfold').paperfold({
-        duration: 300,
+        duration: 800,
         folds: 1,
         //maxFoldHeight: 40,
         isOpen: true,
