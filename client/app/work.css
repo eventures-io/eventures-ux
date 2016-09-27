@@ -16,9 +16,8 @@
 .project-title {
     display: flex;
     justify-content: flex-end;
-    padding-right: 100px;
     font-family: 'Exo 2', sans-serif;
-    color: #e2e2e2;
+    color: #aaaaaa;
     font-size: xx-large;
     font-weight: 900;
     z-index: -1;
@@ -45,8 +44,6 @@
 
 }
 
-
-
 .project-header {
     text-indent: -2em;
 }
@@ -63,8 +60,8 @@
 }
 
 .read-more {
-    margin: 0 50px;
-    border-bottom: 2px solid gray;
+    margin: 0 20% 0 30%;
+    border-bottom: 1px solid gray;
 
 }
 
@@ -99,4 +96,16 @@
 .modal-img {
     max-width: 80vw;
     height: auto;
+}
+
+.close-icon {
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.close-icon.visible {
+   visibility: visible;
 }

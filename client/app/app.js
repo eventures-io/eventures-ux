@@ -15,14 +15,25 @@ function setCollapseButtonText(element, stateClosed) {
     }
 };
 
+function setCloseIconVisible(parentElement, stateVisible) {
+    if(stateVisible) {
+        parentElement.find('.close-icon').addClass('visible');
+    } else {
+        parentElement.find('.close-icon').removeClass('visible');
+    }
+}
+
 function collapseOpenProjects() {
     $('.project-wrap').each(function () {
         if ($(this).hasClass('expanded')) {
             $(this).removeClass('expanded');
             setCollapseButtonText($(this).parent().find('.read-btn'), true);
+            setCloseIconVisible($(this).parent(), false);
         }
     })
 }
+
+
 
 function navigate(section) {
 
@@ -35,13 +46,21 @@ function navigate(section) {
                 if (projectWrap.hasClass('expanded')) {
                     projectWrap.removeClass('expanded');
                     setCollapseButtonText($(this), true);
+                    setCloseIconVisible(projectWrap.parent(), false);
                 } else {
                     collapseOpenProjects();
                     projectWrap.addClass('expanded');
                     setCollapseButtonText($(this), false);
+                    setCloseIconVisible(projectWrap.parent(), true);
                 }
             });
+
+            $('.close-icon').click(function() {
+                collapseOpenProjects();
+            });
         }
+
+
     });
 
 }
@@ -57,6 +76,7 @@ $(document).ready(function () {
             navigate(section);
         }
     });
+
 
     var paperfold = $('.paperfold').paperfold({
         duration: 300,
