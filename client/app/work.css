@@ -4,7 +4,7 @@
 .project-pane {
     position: relative;
     /*TODO center & media queries*/
-    margin: 60px 20%;
+    margin: 20px 20px;
     padding: 15px;
     height: 100%;
     line-height: 1.3em;
@@ -20,23 +20,25 @@
     z-index: -1;
 }
 
-.project-main {
-    max-height: 20vh;
+.project-content {
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    pointer-events: none;
+    transition: opacity .3s ease;
 }
 
-.project-main > p {
+.project-content.expanded {
+    max-height: 100%;
+    opacity: 1;
+}
+
+.project-content,
+.project-header > p,
+.project-content > ol {
     margin-left: 3em;
-
 }
 
-.project-main > ol {
-    margin-left: 3em;
-
-}
-
-.project-main > ol > li {
+.project-content > ol > li {
     padding-bottom: 0.5em;
 
 }
@@ -52,13 +54,8 @@
     font-family: 'Coda', serif;
 }
 
-.project-main.expanded {
-    max-height: 100%;
-    pointer-events: auto;
-}
-
 .read-more {
-    margin: 0 5% 0 40%;
+    margin: 0 20% 0 20%;
     border-bottom: 1px solid gray;
 
 }
@@ -66,11 +63,12 @@
 .read-btn {
     position: relative;
     top: 10px;
-    left: 70%;
+    left: calc(50% - 30px);
+    width: 60px;
     padding: 0 10px;
     background-color: white;
+    text-align: center;
     cursor: pointer;
-
 }
 
 .read-button .expanded {
@@ -88,20 +86,36 @@
     border-bottom: 2px dashed gray;
 }
 
+.close-icon {
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
+    visibility: visible;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .3s;
+}
+
+.close-icon.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* modals  */
+
 /* TODO media query for mobile */
 .modal-img {
     max-width: 80vw;
     height: auto;
 }
 
-.close-icon {
-    height: 15px;
-    width: 15px;
-    margin-left: 10px;
-    visibility: hidden;
-    cursor: pointer;
+.img-carousel {
+    margin: 0 auto;
+    max-width: 80%;
 }
 
-.close-icon.visible {
-    visibility: visible;
+.img-carousel img{
+    margin: 0 auto;
+    width: auto;
+    height: 80vh;
 }

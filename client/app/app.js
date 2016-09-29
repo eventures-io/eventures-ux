@@ -7,6 +7,32 @@ function openImageModal(imageName) {
     });
 };
 
+
+function openContentModal(contentId) {
+    var content = createVRTPersonasElement();
+
+    content.css('{display: block}');
+        content.appendTo('body').modal({
+        fadeDuration: 300,
+        fadeDelay: 0.90
+    });
+
+    content.slick();
+
+};
+
+function createVRTPersonasElement() {
+    return $(
+        '<div class="img-carousel" id="vrt-personas">' +
+        '<div><img src="assets/images/vrt/persona-1.png"></div>' +
+        '<div><img src="assets/images/vrt/persona-2.png"></div>' +
+        '</div>'
+        )
+}
+
+
+
+
 function setCollapseButtonText(element, stateClosed) {
     if (stateClosed) {
         element.html('read more');
@@ -15,23 +41,23 @@ function setCollapseButtonText(element, stateClosed) {
     }
 };
 
-function setCloseIconVisible(parentElement, stateVisible) {
+function setCloseIconVisible(element, stateVisible) {
     if(stateVisible) {
-        parentElement.find('.close-icon').addClass('visible');
+        element.addClass('visible');
     } else {
-        parentElement.find('.close-icon').removeClass('visible');
+        element.removeClass('visible');
     }
-}
+};
 
 function collapseOpenProjects() {
-    $('.project-main').each(function () {
+    $('.project-content').each(function () {
         if ($(this).hasClass('expanded')) {
             $(this).removeClass('expanded');
             setCollapseButtonText($(this).parent().find('.read-btn'), true);
-            setCloseIconVisible($(this).parent(), false);
+            setCloseIconVisible($(this).parent().find('.close-icon'), false);
         }
     })
-}
+};
 
 function navigate(section) {
 
@@ -39,17 +65,18 @@ function navigate(section) {
         if (section === 'work') {
             $('.read-btn').click(function (event) {
                 var project = $(event.target).data('project');
-                var collapseButton = $('.read-btn.' + project);
-                var projectMain = $('.project-main.' + project);
-                if (projectMain.hasClass('expanded')) {
-                    projectMain.removeClass('expanded');
+                var article = $('article[data-project="' +  project  +  '"]');
+                var closeIcon =  article.find('.close-icon')
+                var projectContent = article.find('.project-content');
+                if (projectContent.hasClass('expanded')) {
+                    projectContent.removeClass('expanded');
                     setCollapseButtonText($(this), true);
-                    setCloseIconVisible(projectMain.parent(), false);
+                    setCloseIconVisible(closeIcon, false);
                 } else {
                     collapseOpenProjects();
-                    projectMain.addClass('expanded');
+                    projectContent.addClass('expanded');
                     setCollapseButtonText($(this), false);
-                    setCloseIconVisible(projectMain.parent(), true);
+                    setCloseIconVisible(closeIcon, true);
                 }
             });
 
@@ -57,11 +84,8 @@ function navigate(section) {
                 collapseOpenProjects();
             });
         }
-
-
     });
-
-}
+};
 
 $(document).ready(function () {
 
@@ -109,7 +133,7 @@ $(document).ready(function () {
 
 
     var paperfold = $('.paperfold').paperfold({
-        duration: 800,
+        duration: 600,
         folds: 1,
         //maxFoldHeight: 40,
         isOpen: true,
@@ -118,6 +142,17 @@ $(document).ready(function () {
     });
 
     $('.paperfold').click(paperfold.toggle);
+
+
+    //$(window).resize(function() {
+    //    if(screen.width == window.innerWidth){
+    //        alert("you are on normal page with 100% zoom");
+    //    } else if(screen.width > window.innerWidth){
+    //        alert("you have zoomed in the page i.e more than 100%");
+    //    } else {
+    //        alert("you have zoomed out i.e less than 100%")
+    //    }
+    //});
 
 
 });
