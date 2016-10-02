@@ -10,22 +10,22 @@ function openImageModal(imageName) {
 
 function openContentModal(contentId) {
     var content = createVRTPersonasElement();
-
-    content.css('{display: block}');
         content.appendTo('body').modal({
         fadeDuration: 300,
         fadeDelay: 0.90
     });
 
-    content.slick();
+    content.slick({
+        'dots': true
+    });
 
 };
 
 function createVRTPersonasElement() {
     return $(
         '<div class="img-carousel" id="vrt-personas">' +
-        '<div><img src="assets/images/vrt/persona-1.png"></div>' +
-        '<div><img src="assets/images/vrt/persona-2.png"></div>' +
+        '<img src="assets/images/vrt/persona-1.png">' +
+        '<img src="assets/images/vrt/persona-2.png">' +
         '</div>'
         )
 }
@@ -53,7 +53,7 @@ function collapseOpenProjects() {
     $('.project-content').each(function () {
         if ($(this).hasClass('expanded')) {
             $(this).removeClass('expanded');
-            setCollapseButtonText($(this).parent().find('.read-btn'), true);
+            setCollapseButtonText($(this).parent().find('.read-more'), true);
             setCloseIconVisible($(this).parent().find('.close-icon'), false);
         }
     })
@@ -63,7 +63,7 @@ function navigate(section) {
 
     $('.main').load('app/' + section + '.html', function () {
         if (section === 'work') {
-            $('.read-btn').click(function (event) {
+            $('.read-more').click(function (event) {
                 var project = $(event.target).data('project');
                 var article = $('article[data-project="' +  project  +  '"]');
                 var closeIcon =  article.find('.close-icon')

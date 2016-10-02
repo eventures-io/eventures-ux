@@ -3,10 +3,11 @@
 
 .project-pane {
     position: relative;
-    /*TODO center & media queries*/
-    margin: 20px 20px;
-    padding: 15px;
     height: 100%;
+    margin: 0 20px 20px 40px;
+    padding: 15px 15px 0 15px;
+    border: 1px solid grey;
+    border-radius: 4px;
     line-height: 1.3em;
 }
 
@@ -32,10 +33,9 @@
     opacity: 1;
 }
 
-.project-content,
 .project-header > p,
 .project-content > ol {
-    margin-left: 3em;
+    margin-left: 1em;
 }
 
 .project-content > ol > li {
@@ -44,7 +44,7 @@
 }
 
 .project-header {
-    text-indent: -2em;
+    text-indent: -1em;
 }
 
 .project-header::first-letter {
@@ -55,35 +55,29 @@
 }
 
 .read-more {
-    margin: 0 20% 0 20%;
-    border-bottom: 1px solid gray;
-
-}
-
-.read-btn {
     position: relative;
     top: 10px;
-    left: calc(50% - 30px);
-    width: 60px;
+    left: 75%;
+    width: 80px;
     padding: 0 10px;
     background-color: white;
     text-align: center;
+    font-style: italic;
     cursor: pointer;
 }
 
-.read-button .expanded {
-    height: 100%;
+.read-more:hover {
+    text-decoration: underline;
 }
 
 .image-link {
-    margin-top: 2px;
-    border-bottom: 1px solid gray;
-    line-height: 0.9em;
+    font-weight: bold;
+    font-style: italic;
     cursor: pointer;
 }
 
 .image-link:hover {
-    border-bottom: 2px dashed gray;
+    border-bottom: 2px dotted #474747;
 }
 
 .close-icon {
@@ -111,11 +105,11 @@
 
 .img-carousel {
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 900px;
 }
 
 .img-carousel img{
     margin: 0 auto;
+    max-height: 80vh;
     width: auto;
-    height: 80vh;
 }
