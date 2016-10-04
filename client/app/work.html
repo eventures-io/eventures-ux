@@ -1,4 +1,6 @@
 <section class="work-section">
+    <span class="drawing-work"></span>
+
     <article class="project-pane" data-project="polestar">
         <span class="project-title">Polestar<span><img src="assets/icons/close.png"
                                                        class="close-icon hidden"></span></span>
@@ -19,7 +21,8 @@
             <p>
                 This approach presents a number of usability issues:
             <ol>
-                <li>The user cannot see at a glance which layers are selected, as they are either hidden by a
+                <li><span class="drawing-list-item one"></span>
+                    The user cannot see at a glance which layers are selected, as they are either hidden by a
                     collapsed
                     state of
                     the container element, or because the accordion element overflows in it’s container and the user
@@ -31,6 +34,7 @@
                     actions from the user.
                 </li>
                 <li>
+                    <span class="drawing-list-item two"></span>
                     The first layer is selected by clicking a radio button, styled as a mechanical switch. This is
                     neither consistent
                     nor intuitive. It makes the user think: What happens if I push that button? Is it some sort of
@@ -39,6 +43,7 @@
                 </li>
 
                 <li>
+                    <span class="drawing-list-item three"></span>
                     Similarly, the layers from the currents group are selected by pressing radio buttons.
                     This violates the ‘Consistency and standards’ heuristic, and the ‘don’t make me think’
                     principle.
@@ -125,7 +130,7 @@
             <p>
                 Given these constraints the following strategic pillars are proposed:
             </p>
-            <ul>
+            <ul class="drawing-ul">
                 <li>Use data driven design as a way to drive acceptance.
                     Communicate this viewpoint clearly throughout the organisation. The term ‘data driven’ conveys
                     impartiality and thoughtfulness.

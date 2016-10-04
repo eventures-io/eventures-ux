@@ -1,6 +1,22 @@
 /* TODO use em's*/
 /* TODO use -js classes for selectors used in code */
 
+.work-section {
+    position: relative;
+}
+
+.drawing-work {
+    position: absolute;
+    top: -10px;
+    left: -120px;
+    width: 230px;
+    height: 180px;
+    background: url(../assets/images/drawings/work.png) no-repeat;
+    background-size: contain;
+    transform: rotate(-8deg);
+    z-index: -1;
+}
+
 .project-pane {
     position: relative;
     height: 100%;
@@ -21,6 +37,24 @@
     z-index: -1;
 }
 
+.project-header {
+    text-indent: -1em;
+}
+
+.project-header::first-letter {
+    font-size: x-large;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Coda', serif;
+}
+
+.project-header > p {
+    margin-left: 1em;
+}
+
+
+
+
 .project-content {
     max-height: 0;
     opacity: 0;
@@ -33,25 +67,15 @@
     opacity: 1;
 }
 
-.project-header > p,
+
 .project-content > ol {
+    list-style: none;
     margin-left: 1em;
 }
 
 .project-content > ol > li {
     padding-bottom: 0.5em;
 
-}
-
-.project-header {
-    text-indent: -1em;
-}
-
-.project-header::first-letter {
-    font-size: x-large;
-    font-weight: bold;
-    color: grey;
-    font-family: 'Coda', serif;
 }
 
 .read-more {
@@ -113,3 +137,5 @@
     max-height: 80vh;
     width: auto;
 }
+
+

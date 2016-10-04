@@ -74,6 +74,56 @@ body {
     padding: 15px 20px 0px 40px;
 }
 
+.drawing-list-item {
+    position: relative;
+    top: 12px;
+    display: inline-block;
+    margin-bottom: 5px;
+    height: 25px;
+    width: 25px;
+
+
+}
+
+.drawing-list-item.one {
+    background: url(../assets/images/drawings/1.png) no-repeat;
+    background-size: contain;
+}
+
+.drawing-list-item.two {
+    background: url(../assets/images/drawings/2.png) no-repeat;
+    background-size: contain;
+}
+
+.drawing-list-item.three {
+    background: url(../assets/images/drawings/3.png) no-repeat;
+    background-size: contain;
+}
+
+.drawing-ul {
+    list-style: none;
+
+}
+
+.drawing-ul li {
+    position: relative;
+    margin-left: 3em;
+    text-indent: -1em;
+}
+
+.drawing-ul li:before {
+    content:'';
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    height: 20px;
+    width: 20px;
+    background: url(../assets/images/drawings/list-icon.png) no-repeat;
+    background-size: contain;
+}
+
+
+
 @media (max-width: 900px) {
 
     .paperfold {

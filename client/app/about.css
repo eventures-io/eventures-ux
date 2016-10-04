@@ -2,11 +2,16 @@
     padding: 20px;
 }
 .about-header {
+    position: relative;
     font-weight: bold;
 }
 
 .about-content {
+  position: relative;
+}
 
+.about-content ul {
+    list-style: none;
 }
 
 .about-quote {
@@ -20,59 +25,76 @@
     font-style: italic;
 }
 
-.about-process {
-   padding: 20px;
-}
-
-
-.about-process ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.about-process ul li {
-    position: relative;
-    height: 90px;
-    margin-left: 30%;
-    border-left: 2px solid grey;
-}
-
-.process-item:after {
-    content: '';
+.drawing-ux {
     position: absolute;
-    top: 0;
-    left: -10px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid gray;
-
+    top: -40px;
+    left: -150px;
+    width: 150px;
+    height: 100px;
+    background: url(../assets/images/drawings/ux.png) no-repeat;
+    background-size: contain;
+    z-index: -1;
+    transform: rotate(-6deg);
 }
 
-.process-item-name,
-.process-item-description {
-    position: absolute;
-    display: inline-block;
-    width: 190px;
-    font-family: 'Lato', sans-serif;
 
-}
 
-.process-item-name {
-    font-weight: bold;
-}
 
-.process-item-description {
-    font-style: italic;
-}
 
-.left {
-    left: -220px;
-    text-align: right;
-}
 
-.right {
-    left: 30px;
-    text-align: left;
-}
+/*.about-process {*/
+   /*padding: 20px;*/
+/*}*/
+
+
+/*.about-process ul {*/
+    /*list-style: none;*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+/*.about-process ul li {*/
+    /*position: relative;*/
+    /*height: 90px;*/
+    /*margin-left: 30%;*/
+    /*border-left: 2px solid grey;*/
+/*}*/
+
+/*.process-item:after {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: -10px;*/
+    /*width: 14px;*/
+    /*height: 14px;*/
+    /*border-radius: 50%;*/
+    /*background-color: white;*/
+    /*border: 2px solid gray;*/
+
+/*}*/
+
+/*.process-item-name,*/
+/*.process-item-description {*/
+    /*position: absolute;*/
+    /*display: inline-block;*/
+    /*width: 190px;*/
+    /*font-family: 'Lato', sans-serif;*/
+
+/*}*/
+
+/*.process-item-name {*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*.process-item-description {*/
+    /*font-style: italic;*/
+/*}*/
+
+/*.left {*/
+    /*left: -220px;*/
+    /*text-align: right;*/
+/*}*/
+
+/*.right {*/
+    /*left: 30px;*/
+    /*text-align: left;*/
+/*}*/
