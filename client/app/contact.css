@@ -1,0 +1,44 @@
+.contact {
+    position: relative;
+    height: 60vh;
+    padding-left: 10%;
+    border: 1px solid grey;
+    border-radius: 4px;
+
+}
+
+.contact-header {
+
+    color: #D04637;
+    font-family: 'Lato', sans-serif;
+}
+
+.contact-img {
+ height: 150px;
+}
+
+
+.contact-content {
+    width: 40%;
+    padding: 2em;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    font-size: larger;
+
+}
+
+
+.drawing-contact {
+    position: relative;
+    top: -50px;
+    float: right;
+    margin-right: 3em;
+    display: inline-block;
+    height: 140px;
+    width: 170px;
+    background: url(../assets/images/drawings/contact.png) no-repeat;
+    background-size: contain;
+    transform: rotate(2deg);
+
+
+}

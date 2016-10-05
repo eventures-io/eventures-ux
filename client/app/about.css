@@ -12,6 +12,12 @@
 
 .about-content ul {
     list-style: none;
+
+}
+
+.about-content ul li {
+     margin-bottom: 0.5em;
+
 }
 
 .about-quote {
@@ -27,7 +33,7 @@
 
 .drawing-ux {
     position: absolute;
-    top: -40px;
+    top: -20px;
     left: -150px;
     width: 150px;
     height: 100px;
@@ -37,7 +43,9 @@
     transform: rotate(-6deg);
 }
 
-
+.label {
+    font-weight: bold;
+}
 
 
 

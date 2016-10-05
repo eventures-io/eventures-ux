@@ -1,5 +1,5 @@
 'use strict';
-// TODO best practices JQuery
+// TODO follow best practices JQuery
 function openImageModal(imageName) {
     $('<div><img src="/assets/images/' + imageName + '.jpg" class="modal-img"></div>').appendTo('body').modal({
         fadeDuration: 300,
@@ -66,7 +66,7 @@ function navigate(section) {
             $('.read-more').click(function (event) {
                 var project = $(event.target).data('project');
                 var article = $('article[data-project="' +  project  +  '"]');
-                var closeIcon =  article.find('.close-icon')
+                var closeIcon =  article.find('.close-icon');
                 var projectContent = article.find('.project-content');
                 if (projectContent.hasClass('expanded')) {
                     projectContent.removeClass('expanded');
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
             var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
             lastFromTop = fromTop;
-            console.log('from top: ' + fromTop + 'direction: ' + scrollDirection );
+            //console.log('from top: ' + fromTop + 'direction: ' + scrollDirection );
             if(fromTop <= 30 && scrollDirection === 'down' && isPaperfoldClosed) {
                 paperfold.open();
                 isPaperfoldClosed = false;
@@ -126,9 +126,7 @@ $(document).ready(function () {
     $('.menu-link').on('click', function (event) {
         event.preventDefault();
         var section = $(event.target).data('section');
-        if (section !== 'contact') {
-            navigate(section);
-        }
+        navigate(section);
     });
 
 
