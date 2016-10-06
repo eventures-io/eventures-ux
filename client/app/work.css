@@ -8,10 +8,10 @@
 .drawing-work {
     position: absolute;
     top: -10px;
-    right: -120px;
+    right: -230px;
     width: 230px;
     height: 180px;
-    background: url(../assets/images/drawings/cogs.png) no-repeat;
+    background: url(../assets/images/drawings/cogs-2.png) no-repeat;
     background-size: contain;
     transform: rotate(-8deg);
     z-index: -1;
@@ -21,7 +21,7 @@
     position: relative;
     height: 100%;
     margin: 0 20px 20px 20px;
-    padding: 15px 15px 0 15px;
+    padding: 15px 30px 10px 30px;
     border: 1px solid grey;
     border-radius: 4px;
     line-height: 1.3em;
@@ -53,8 +53,6 @@
 }
 
 
-
-
 .project-content {
     max-height: 0;
     opacity: 0;
@@ -69,7 +67,6 @@
 
 
 .project-content > ol {
-    list-style: none;
     margin-left: 1em;
 }
 
@@ -80,7 +77,7 @@
 
 .read-more {
     position: relative;
-    top: 10px;
+    top: 20px;
     left: 75%;
     width: 80px;
     padding: 0 10px;
@@ -95,47 +92,37 @@
 }
 
 .image-link {
+    color: #535353;
     font-weight: bold;
-    font-style: italic;
+    //font-style: italic;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .image-link:hover {
-    border-bottom: 1px solid #474747;
+    text-decoration: none;
 }
 
 .close-icon {
     height: 15px;
     width: 15px;
     margin-left: 10px;
-    visibility: visible;
     opacity: 0;
-    cursor: pointer;
     transition: opacity .3s;
 }
 
 .close-icon.visible {
-    visibility: visible;
     opacity: 1;
+    cursor: pointer;
 }
 
-/* modals  */
 
-/* TODO media query for mobile */
-.modal-img {
-    max-width: 80vw;
-    height: auto;
-}
+@media (max-width: 1100px) {
+    .drawing-work {
+        position: relative;
+        left: 5em;
+    }
 
-.img-carousel {
-    margin: 0 auto;
-    max-width: 900px;
-}
-
-.img-carousel img{
-    margin: 0 auto;
-    max-height: 80vh;
-    width: auto;
 }
 
 

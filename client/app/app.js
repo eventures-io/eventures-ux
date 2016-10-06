@@ -1,7 +1,7 @@
 'use strict';
 // TODO follow best practices JQuery
 function openImageModal(imageName) {
-    $('<div><img src="/assets/images/' + imageName + '.jpg" class="modal-img"></div>').appendTo('body').modal({
+    $('<div><img src="/assets/images/' + imageName + '.png" class="modal-img"></div>').appendTo('body').modal({
         fadeDuration: 300,
         fadeDelay: 0.90
     });
@@ -26,6 +26,7 @@ function createVRTPersonasElement() {
         '<div class="img-carousel" id="vrt-personas">' +
         '<img src="assets/images/vrt/persona-1.png">' +
         '<img src="assets/images/vrt/persona-2.png">' +
+        '<img src="assets/images/vrt/persona-3.png">' +
         '</div>'
         )
 }
@@ -125,6 +126,8 @@ $(document).ready(function () {
 
     $('.menu-link').on('click', function (event) {
         event.preventDefault();
+        $('.menu-link').removeClass('active');
+        $(event.target).addClass('active');
         var section = $(event.target).data('section');
         navigate(section);
     });
@@ -139,7 +142,7 @@ $(document).ready(function () {
         bottomShadow: 'linear-gradient(rgba(169 ,169, 169, 0.4), transparent)'
     });
 
-    $('.paperfold').click(paperfold.toggle);
+    //$('.paperfold').click(paperfold.toggle);
 
 
     //$(window).resize(function() {
