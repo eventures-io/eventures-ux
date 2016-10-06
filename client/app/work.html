@@ -1,223 +1,249 @@
 <section class="work-section">
     <div class="drawing-work"></div>
 
-    <article class="project-pane" data-project="polestar">
+    <main class="work-main">
+        <article class="project-pane" data-project="polestar">
         <span class="project-title">Polestar<span><img src="assets/icons/close.png"
                                                        class="close-icon hidden"></span></span>
 
-        <div class="project-header">
-            <p>
-                Polestar space solutions want to provide customers with additional layers to their existing weather
-                maps.
-                The new weather+ service will display maps with ocean wave and current models.
-            </p>
-            <p>
-                The existing layout is based on a list of select boxes contained in an accordion layout container.
-                Polestar chose to add two more elements to the accordion.
-            </p>
-        </div>
-        <div class="project-content">
-            <span class="image-link" onclick="openImageModal('polestar/polestar-1')">The design looked like this</span>.
-            <p>
-                This approach presents a number of usability issues:
-            <ol>
-                <li><span class="drawing-list-item one"></span>
-                    The user cannot see at a glance which layers are selected, as they are either hidden by a collapsed
-                    state of the container element or because the accordion element overflows in its container.
-                    This is a breach of the “visibility of system status” heuristic criterion. It increases cognitive
-                    load and requires additional actions from the user.
-                </li>
-                <li>
-                    <span class="drawing-list-item two"></span>
-                    The first layer is selected by clicking a radio button, styled as a toggle switch.
-                    This is neither consistent nor intuitive.
-                    It makes the user think: What happens if I push that button?
-                    Is it some sort of filter? Why is different from the other layer selections?
-                </li>
+            <div class="project-header">
+                <p>
+                    Polestar space solutions want to provide customers with additional layers to their existing weather
+                    maps.
+                    The new weather+ service will display maps with ocean wave and current models.
+                </p>
+                <p>
+                    The existing layout is based on a list of select boxes contained in an accordion layout container.
+                    Polestar chose to add two more elements to the accordion.
+                </p>
+            </div>
+            <div class="project-content">
+                <span class="image-link"
+                      onclick="openImageModal('polestar/polestar-1')">The design looked like this</span>.
+                <p>
+                    This approach presents a number of usability issues:
+                <ol>
+                    <li><span class="drawing-list-item one"></span>
+                        The user cannot see at a glance which layers are selected, as they are either hidden by a
+                        collapsed
+                        state of the container element or because the accordion element overflows in its container.
+                        This is a breach of the “visibility of system status” heuristic criterion. It increases
+                        cognitive
+                        load and requires additional actions from the user.
+                    </li>
+                    <li>
+                        <span class="drawing-list-item two"></span>
+                        The first layer is selected by clicking a radio button, styled as a toggle switch.
+                        This is neither consistent nor intuitive.
+                        It makes the user think: What happens if I push that button?
+                        Is it some sort of filter? Why is different from the other layer selections?
+                    </li>
 
-                <li>
-                    <span class="drawing-list-item three"></span>
-                    Similarly, the layers from the currents group are selected by pressing radio buttons.
-                    This violates the “consistency and standards” heuristic criterion,
-                    and the “don’t make me think” principle.
-                </li>
-            </ol>
-            </p>
+                    <li>
+                        <span class="drawing-list-item three"></span>
+                        Similarly, the layers from the currents group are selected by pressing radio buttons.
+                        This violates the “consistency and standards” heuristic criterion,
+                        and the “don’t make me think” principle.
+                    </li>
+                </ol>
+                </p>
 
-            <p>
-                In a first attempt to address these problems, I proposed to add the selected layers above the accordion
-                element, in the form of clickable pills, and remove the selected layers from the layers list.
-                The accordion can only have one element open at the time, which eliminates the need to scroll.
-                All layers are also consistently selectable by a select box.
-                <br/>
+                <p>
+                    In a first attempt to address these problems, I proposed to add the selected layers above the
+                    accordion
+                    element, in the form of clickable pills, and remove the selected layers from the layers list.
+                    The accordion can only have one element open at the time, which eliminates the need to scroll.
+                    All layers are also consistently selectable by a select box.
+                    <br/>
                 <span class="image-link"
                       onclick="openImageModal('polestar/polestar-2')">This is the second version</span>.
 
-            </p>
+                </p>
 
-            <p>
-                This design improves on the previous but is still not user-friendly.
-                Even if the system state is visible at all times, it is hard to read. In addition to that,
-                there are multiple sliders, each holding state.
-                <br/>
-                In short, the screen is to complex. A better solution was required.
-            </p>
+                <p>
+                    This design improves on the previous but is still not user-friendly.
+                    Even if the system state is visible at all times, it is hard to read. In addition to that,
+                    there are multiple sliders, each holding state.
+                    <br/>
+                    In short, the screen is to complex. A better solution was required.
+                </p>
 
-            <p>
-                The reason the selection status is hard to read is because the selected layers are displayed inside
-                their
-                proper group container.<br/>
-                It would be better to move all selected layers to the top, so they become more apparent.
-                <br/>
-                Also, there is no need to have separate sliders for each group, as it would not make sense to overlay
-                maps from different time frames. Given that the accordion headers take up so much vertical space,
-                the accordion is to be replaced by a carousel.
-            </p>
-            <p>
-                <span class="image-link" onclick="openImageModal('polestar/polestar-3')">The final design </span>
-                eliminates all issues with previous versions and offers added flexibility to navigate through the layer
-                groups (choice between group icon buttons and previous/next buttons).
-                <br/>It also allows more groups to be added later on without negatively impacting usability.
-                The reclaimed vertical space can be used to add a filter field.
-                <br/>
+                <p>
+                    The reason the selection status is hard to read is because the selected layers are displayed inside
+                    their
+                    proper group container.<br/>
+                    It would be better to move all selected layers to the top, so they become more apparent.
+                    <br/>
+                    Also, there is no need to have separate sliders for each group, as it would not make sense to
+                    overlay
+                    maps from different time frames. Given that the accordion headers take up so much vertical space,
+                    the accordion is to be replaced by a carousel.
+                </p>
+                <p>
+                    <span class="image-link" onclick="openImageModal('polestar/polestar-3')">The final design </span>
+                    eliminates all issues with previous versions and offers added flexibility to navigate through the
+                    layer
+                    groups (choice between group icon buttons and previous/next buttons).
+                    <br/>It also allows more groups to be added later on without negatively impacting usability.
+                    The reclaimed vertical space can be used to add a filter field.
+                    <br/>
 
-                <!--Visual: The application screen with graphic design. (Or animated prototype).-->
-            </p>
-        </div>
-        <span class="read-more" data-project="polestar">read more</span>
-    </article>
+                    <!--Visual: The application screen with graphic design. (Or animated prototype).-->
+                </p>
+            </div>
+            <span class="read-more" data-project="polestar">read more</span>
+        </article>
 
 
-    <article class="project-pane" data-project="vrt">
-        <span class="project-title">VRT<span><img src="assets/icons/close.png" class="close-icon hidden"></span></span>
+        <article class="project-pane" data-project="vrt">
+            <span class="project-title">VRT<span><img src="assets/icons/close.png"
+                                                      class="close-icon hidden"></span></span>
 
-        <div class="project-header">
-            <p>
-                VRT (Belgian radio and television) wants to optimize their news editing and publication process.
-                Some manual tasks (like incoming news classification, summarization and localization) need to be
-                automated,
-                and the workflow must be centralized.
-            </p>
-            <p>
-                Currently, the different channels (radio, television, internet) use different applications and workflows
-                to accomplish the same tasks. Some workflows require substantial manual input.
-            </p>
-        </div>
-        <div class="project-content">
-            <p>
-                The aim is to integrate these disparate workflows into a single application to be used across all
-                newsrooms,
-                for editing, and subsequent publishing to the different channels.
-            </p>
-            <p>
-                VRT is a state owned company, and is heavily politicised. As a consequence, there is a high resistance
-                to change.
-                It is important to devise a strategy to reduce friction as the new application is being introduced.
-            </p>
-            <h3>Strategy</h3>
-            <p>
-                Given these constraints the following strategic pillars suggested:
-            </p>
-            <ul class="drawing-ul">
-                <li>
-                    Use data driven design as a way to drive acceptance.
-                    <p>
-                        Communicate this viewpoint clearly throughout the organisation.
-                        The term ‘data driven’ conveys impartiality and thoughtfulness.
-                    </p>
-                </li>
-                <li>
-                    Starting from a minimal viable product, use an iterative process with strong feedback loop to push
-                    new features.
-                    <p>
-                        Use focus groups to centralise communication. Avoid exchanges to turn into discussion groups.
-                        Remind of the data driven design if needed.
-                        Provide a prominent feedback button in the new application.
-                    </p>
-                </li>
-                <li>
-                    Contextual, just-in-time onboarding.
-                    <p>
-                        Reduce friction for new users by providing contextual help.
-                    </p>
-                    <p>
-                        Maximize empty states (no content yet). Use it as an opportunity to start demonstrating the
-                        value of the new tool.
-                    </p>
-                    <p>
-                        Detect which new product features remain underused (on a user profile basis) and remind of
-                        them once in awhile. Provide a ‘do not remind me’ option.
-                    </p>
-                    <p>
-                        Show in which alternative ways an action can be accomplished.
-                        eg drag and drop vs context menu
-                    </p>
-                </li>
-                <li>
-                    Keep the look and feel similar to the old application
-                </li>
-                <li>
-                    Identify early adopters and work with them to exert peer pressure
-                </li>
-            </ul>
+            <div class="project-header">
+                <p>
+                    VRT (Belgian radio and television) wants to optimize their news editing and publication process.
+                    Some manual tasks (like incoming news classification, summarization and localization) need to be
+                    automated,
+                    and the workflow must be centralized.
+                </p>
+                <p>
+                    Currently, the different channels (radio, television, internet) use different applications and
+                    workflows
+                    to accomplish the same tasks. Some workflows require substantial manual input.
+                </p>
+            </div>
+            <div class="project-content">
+                <p>
+                    The aim is to integrate these disparate workflows into a single application to be used across all
+                    newsrooms,
+                    for editing, and subsequent publishing to the different channels.
+                </p>
+                <p>
+                    VRT is a state owned company, and is heavily politicised. As a consequence, there is a high
+                    resistance
+                    to change.
+                    It is important to devise a strategy to reduce friction as the new application is being introduced.
+                </p>
+                <h3>Strategy</h3>
+                <p>
+                    Given these constraints the following strategic pillars suggested:
+                </p>
+                <ul class="drawing-ul">
+                    <li>
+                        Use data driven design as a way to drive acceptance.
+                        <p>
+                            Communicate this viewpoint clearly throughout the organisation.
+                            The term ‘data driven’ conveys impartiality and thoughtfulness.
+                        </p>
+                    </li>
+                    <li>
+                        Starting from a minimal viable product, use an iterative process with strong feedback loop to
+                        push
+                        new features.
+                        <p>
+                            Use focus groups to centralise communication. Avoid exchanges to turn into discussion
+                            groups.
+                            Remind of the data driven design if needed.
+                            Provide a prominent feedback button in the new application.
+                        </p>
+                    </li>
+                    <li>
+                        Contextual, just-in-time onboarding.
+                        <p>
+                            Reduce friction for new users by providing contextual help.
+                        </p>
+                        <p>
+                            Maximize empty states (no content yet). Use it as an opportunity to start demonstrating the
+                            value of the new tool.
+                        </p>
+                        <p>
+                            Detect which new product features remain underused (on a user profile basis) and remind of
+                            them once in awhile. Provide a ‘do not remind me’ option.
+                        </p>
+                        <p>
+                            Show in which alternative ways an action can be accomplished.
+                            eg drag and drop vs context menu
+                        </p>
+                    </li>
+                    <li>
+                        Keep the look and feel similar to the old application
+                    </li>
+                    <li>
+                        Identify early adopters and work with them to exert peer pressure
+                    </li>
+                </ul>
 
-            <h3>Process</h3>
-            <ul class="process-list">
-                <li>
-                    <p>
-                        Using participant observation, document the way people go through their everyday work.
-                        For each participant create cards to describe each participant’s specific Information
-                        Architecture.
-                        When done, identify common patterns to select the cards for the new IA.
-                        Use this information to determine product features, and define future milestones.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Define the <span class="image-link" onclick="openContentModal('vrt-personas')">personas</span>.
-                        <br>
-                        Share the personas with the focus groups, incorporate feedback.
-                    </p>
-                </li>
-            </ul>
-        </div>
+                <h3>Process</h3>
+                <ul class="process-list">
+                    <li>
+                        <p>
+                            Using participant observation, document the way people go through their everyday work.
+                            For each participant create cards to describe each participant’s specific Information
+                            Architecture.
+                            When done, identify common patterns to select the cards for the new IA.
+                            Use this information to determine product features, and define future milestones.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Define the <span class="image-link"
+                                             onclick="openContentModal('vrt-personas')">personas</span>.
+                            <br>
+                            Share the personas with the focus groups, incorporate feedback.
+                        </p>
+                    </li>
+                </ul>
+            </div>
 
-        <span class="read-more" data-project="vrt">read more</span>
-    </article>
+            <span class="read-more" data-project="vrt">read more</span>
+        </article>
 
-    <article class="project-pane" data-project="plantzr">
+        <article class="project-pane" data-project="plantzr">
         <span class="project-title">Plantzr<span><img src="assets/icons/close.png"
                                                       class="close-icon hidden"></span></span>
 
-        <div class="project-header">
-            <p>
-                In 2015, I lived in Portugal for most of the year.
-                Coming from the northern hemisphere, I am familiar with common plants
-                like Hogweed, Dandelion and trees like Oak, Beech and Birch. Most most plants encountered in the south
-                of
-                Europe where unknown to me.
-                <!--<p>-->
-                <!--Carob tree, Rubber fig, Aloe and Agave varieties, Oleander, Giant cane are among those-->
-                <!--very common plants that I had no name for.-->
-                <!--<p/>-->
-            <p>
-                I decided to create a mobile application to document the plants I saw around me, and learn more about
-                them.
-            </p>
-        </div>
+            <div class="project-header">
+                <p>
+                    In 2015, I lived in Portugal for most of the year.
+                    Coming from the northern hemisphere, I am familiar with common plants
+                    like Hogweed, Dandelion and trees like Oak, Beech and Birch. Most most plants encountered in the
+                    south
+                    of
+                    Europe where unknown to me.
+                    <!--<p>-->
+                    <!--Carob tree, Rubber fig, Aloe and Agave varieties, Oleander, Giant cane are among those-->
+                    <!--very common plants that I had no name for.-->
+                    <!--<p/>-->
+                <p>
+                    I decided to create a mobile application to document the plants I saw around me, and learn more
+                    about
+                    them.
+                </p>
+            </div>
 
-        <div class="project-content">
-            <p>
-                The users insert photographs and a description of plants into the aplication.
-                A quiz section in the app lets users identify plants posted by others.
-                <br/>
-                It is also possible to send a tweet with the app's hashtag for the twittersphere to respond.
-                <span class="image-link" onclick="openImageModal('plantzr/low-fi-wireframe')">View the wireframes</span>
+            <div class="project-content">
+                <p>
+                    The users insert photographs and a description of plants into the aplication.
+                    A quiz section in the app lets users identify plants posted by others.
+                    <br/>
+                    It is also possible to send a tweet with the app's hashtag for the twittersphere to respond.
+                    <span class="image-link"
+                          onclick="openImageModal('plantzr/low-fi-wireframe')">View the wireframes</span>
 
-            </p>
-        </div>
-        <span class="read-more" data-project="plantzr">read more</span>
-    </article>
-    <span>Hire me. Or get to know me first</span>
+                </p>
+            </div>
+            <span class="read-more" data-project="plantzr">read more</span>
+        </article>
+    </main>
+    <footer class="work-footer">
+        <span class="work-hire" onclick="navigate('contact')">
+            Hire me
+              </span>
+        <span class="drawing-handshake"></span>
+        <span class="work-know-first" onclick="navigate('about')">
+            or get to know me first
+        </span>
+        <span class="drawing-arrow"></span>
+    </footer>
 </section>
 

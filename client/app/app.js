@@ -61,7 +61,7 @@ function collapseOpenProjects() {
 };
 
 function navigate(section) {
-
+    window.scrollTo(0, 0);
     $('.main').load('app/' + section + '.html', function () {
         if (section === 'work') {
             $('.read-more').click(function (event) {
@@ -141,8 +141,6 @@ $(document).ready(function () {
         topShadow: 'linear-gradient(transparent, rgba(169 ,169, 169, 0.4)',
         bottomShadow: 'linear-gradient(rgba(169 ,169, 169, 0.4), transparent)'
     });
-
-    //$('.paperfold').click(paperfold.toggle);
 
 
     //$(window).resize(function() {
