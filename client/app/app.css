@@ -130,6 +130,12 @@ h5 {
     margin-left: 3em;
 }
 
+.drawing-ul li p {
+    margin: 0.3em 0;
+    padding-left:1em;
+
+}
+
 .drawing-ul li:before {
     content:'';
     position: absolute;
@@ -196,12 +202,17 @@ h5 {
 }
 
 @media (max-width: 600px) {
-    /*.main {*/
-        /*margin: 200px auto 200px auto;*/
-    /*}*/
+
+    .paperfold p {
+        padding: 10px 20px 10px 40px;
+
+    }
+
     .modal-img {
         max-width: 100vw;
         height: auto;
     }
+
+
 }
 

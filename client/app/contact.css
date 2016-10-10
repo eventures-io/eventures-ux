@@ -15,15 +15,17 @@
 }
 
 .contact-img {
- height: 150px;
+ height: 200px;
 }
 
 
 .contact-content {
+
     padding: 0 2em 2em 2em;
     //background-color: #f1f1f1;
     border-radius: 4px;
-    font-size: larger;
+    font-family: 'Caveat', serif;
+    font-size: xx-large;
     font-weight: bold;
 }
 
@@ -36,12 +38,12 @@
     position: relative;
     display: inline-block;
     float: right;
-    margin-right: 3em;
-    height: 140px;
-    width: 170px;
-    background: url(../assets/images/drawings/contact.png) no-repeat;
+    //margin-right: 3em;
+    height: 200px;
+    width: 150px;
+    background: url(../assets/images/drawings/mail.png) no-repeat;
     background-size: contain;
-    transform: rotate(2deg);
+    transform: rotate(0deg);
 
 }
 
@@ -58,11 +60,19 @@
 
 
 @media (max-width: 900px) {
-    .drawing-contact {
-        height: 100px;
-        width: 130px;
-        top: 0;
-        margin-right: 0;
+    .contact-section {
+        margin-top: 180px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .contact-header h1{
+        font-size: larger;
+    }
+    .contact-content {
+        padding: 1em;
     }
 
 }
