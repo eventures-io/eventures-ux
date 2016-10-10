@@ -223,8 +223,8 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         '<%= yeoman.dist %>/public/{,*/}*.js',
-                        '<%= yeoman.dist %>/public/{,*/}*.css',
-                        '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                        '<%= yeoman.dist %>/public/{,*/}*.css'
+                        //'<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                         //'<%= yeoman.dist %>/public/assets/fonts/*'
                     ]
                 }
@@ -313,6 +313,8 @@ module.exports = function (grunt) {
                             'assets/icons/**/*',
                             'assets/fonts/**/*',
                             'google05176910c8c39725.html',
+                            'ajax-loader.gif',
+                            'app/*.html',
                             'index.html'
                         ]
                     },

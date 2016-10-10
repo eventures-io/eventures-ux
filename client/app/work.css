@@ -149,14 +149,14 @@
 
 .image-link {
     color: #535353;
-    font-weight: bold;
+    font-weight: 500;
     //font-style: italic;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .image-link:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .close-icon {
@@ -178,12 +178,10 @@
         position: relative;
         left: 5em;
     }
-
 }
 
 @media (max-width: 600px) {
     .work-footer {
-
         left: 10%;
     }
 
