@@ -1,7 +1,7 @@
 'use strict';
 // TODO follow best practices JQuery
 function openImageModal(imageName) {
-    $('<div><img src="/assets/images/' + imageName + '.png" class="modal-img"></div>').appendTo('body').modal({
+    $('<div><img src="/assets/images/' + imageName + '" class="modal-img"></div>').appendTo('body').modal({
         fadeDuration: 300,
         fadeDelay: 0.90
     });
@@ -132,10 +132,11 @@ $(document).ready(function () {
         navigate(section);
     });
 
+    var vw = $( document ).width();
 
     var paperfold = $('.paperfold').paperfold({
         duration: 600,
-        folds: 1,
+        folds: vw < 901? 2 : 1,
         //maxFoldHeight: 40,
         isOpen: true,
         topShadow: 'linear-gradient(transparent, rgba(169 ,169, 169, 0.4)',
