@@ -70,10 +70,10 @@
 }
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .drawing-ux {
         position: relative;
-        left: calc(100vw - 260px);
+        left: calc(100% - 160px);
         top: 0;
         z-index: 1;
     }
