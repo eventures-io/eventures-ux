@@ -349,13 +349,15 @@ module.exports = function (grunt) {
                 dir: 'dist',
                 commit: true,
                 push: true,
+                force: true,
                 connectCommits: false,
                 message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
             },
             heroku: {
                 options: {
                     remote: 'git@heroku.com:eventures.git',
-                    branch: 'master'
+                    branch: 'master',
+                    force: true
                 }
             }
         },
@@ -377,7 +379,7 @@ module.exports = function (grunt) {
                 }
             },
             dist: [
-                'imagemin'
+                //'imagemin'
                 //'svgmin'
             ]
         },

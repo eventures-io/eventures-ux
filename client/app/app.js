@@ -1,7 +1,11 @@
 'use strict';
 // TODO follow best practices JQuery
+var activePage = 'work';
+
 function openImageModal(imageName) {
     $('<div><img src="/assets/images/' + imageName + '" class="modal-img"></div>').appendTo('body').modal({
+        closeClass: 'icon-remove',
+        closeText: 'x',
         fadeDuration: 300,
         fadeDelay: 0.90
     });
@@ -10,13 +14,17 @@ function openImageModal(imageName) {
 
 function openContentModal(contentId) {
     var content = createVRTPersonasElement();
-        content.appendTo('body').modal({
+    content.appendTo('body').modal({
+        closeClass: 'icon-remove',
+        closeText: 'x',
         fadeDuration: 300,
         fadeDelay: 0.90
     });
 
     content.slick({
-        'dots': true
+        'dots': true,
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='../assets/icons/previous.png'>",
+        nextArrow:"<img class='a-right control-c next slick-next' src='../assets/icons/next.png'>"
     });
 
 };
@@ -28,10 +36,8 @@ function createVRTPersonasElement() {
         '<img src="assets/images/vrt/persona-2.png">' +
         '<img src="assets/images/vrt/persona-3.png">' +
         '</div>'
-        )
+    )
 }
-
-
 
 
 function setCollapseButtonText(element, stateClosed) {
@@ -43,7 +49,7 @@ function setCollapseButtonText(element, stateClosed) {
 };
 
 function setCloseIconVisible(element, stateVisible) {
-    if(stateVisible) {
+    if (stateVisible) {
         element.addClass('visible');
     } else {
         element.removeClass('visible');
@@ -63,11 +69,12 @@ function collapseOpenProjects() {
 function navigate(section) {
     window.scrollTo(0, 0);
     $('.main').load('app/' + section + '.html', function () {
+        activePage = section;
         if (section === 'work') {
             $('.read-more').click(function (event) {
                 var project = $(event.target).data('project');
-                var article = $('article[data-project="' +  project  +  '"]');
-                var closeIcon =  article.find('.close-icon');
+                var article = $('article[data-project="' + project + '"]');
+                var closeIcon = article.find('.close-icon');
                 var projectContent = article.find('.project-content');
                 if (projectContent.hasClass('expanded')) {
                     projectContent.removeClass('expanded');
@@ -81,7 +88,7 @@ function navigate(section) {
                 }
             });
 
-            $('.close-icon').click(function() {
+            $('.close-icon').click(function () {
                 collapseOpenProjects();
             });
         }
@@ -92,30 +99,31 @@ $(document).ready(function () {
 
     navigate('work');
 
+
     var didScroll = false;
-    var lastFromTop =  0;
+    var lastFromTop = 0;
     var isPaperfoldClosed = false;
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         didScroll = true;
     });
 
-    setInterval(function(event) {
-        if ( didScroll ) {
+    setInterval(function (event) {
+        if (didScroll && activePage !== 'contact') {
             didScroll = false;
             var fromTop = $(this).scrollTop();
 
             var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
             lastFromTop = fromTop;
             //console.log('from top: ' + fromTop + 'direction: ' + scrollDirection );
-            if(fromTop <= 30 && scrollDirection === 'down' && isPaperfoldClosed) {
+            if (fromTop <= 30 && scrollDirection === 'down' && isPaperfoldClosed) {
                 paperfold.open();
                 isPaperfoldClosed = false;
                 $('.main').removeClass('fold-closed');
                 return false;
             }
 
-            if (fromTop > 30 && scrollDirection ===  'up' && !isPaperfoldClosed) {
+            if (fromTop > 30 && scrollDirection === 'up' && !isPaperfoldClosed) {
                 paperfold.close();
                 $('.main').addClass('fold-closed');
                 isPaperfoldClosed = true;
@@ -132,11 +140,11 @@ $(document).ready(function () {
         navigate(section);
     });
 
-    var vw = $( document ).width();
+    var vw = $(document).width();
 
     var paperfold = $('.paperfold').paperfold({
         duration: 600,
-        folds: vw < 901? 2 : 1,
+        folds: vw < 901 ? 2 : 1,
         //maxFoldHeight: 40,
         isOpen: true,
         topShadow: 'linear-gradient(transparent, rgba(169 ,169, 169, 0.4)',

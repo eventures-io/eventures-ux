@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,500|Roboto+Mono|Coda|Lato|Caveat);
 
 
-/** Global styles */
+/**** Global styles */
 body {
     color: #191919;
     font-family: 'Roboto', serif;
@@ -25,7 +25,8 @@ h5 {
     font-family: 'Roboto Mono', serif;
 }
 
-/** Header and menu */
+/**** Header and menu */
+
 .page-header {
     position: fixed;
     top: 0;
@@ -86,7 +87,7 @@ h5 {
     text-decoration: underline;
 }
 
-/** main */
+/**** main */
 
 .main {
     max-width: 900px;
@@ -98,7 +99,8 @@ h5 {
     margin-top: 30px;
 }
 
-/** lists */
+/**** lists */
+
 .drawing-list-item {
     position: relative;
     top: 12px;
@@ -158,8 +160,7 @@ h5 {
 }
 
 
-/* modals  */
-
+/***** modals  */
 .modal-img {
     max-width: 80vw;
     height: auto;
@@ -175,6 +176,32 @@ h5 {
     max-height: 80vh;
     width: auto;
 }
+
+
+.modal a.close-modal[class*="icon-"] {
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    line-height: 0.75;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 2px;
+    background: #5d5d5d;
+   // border: 2px solid #fff;
+    -webkit-border-radius:  26px;
+    -moz-border-radius:     26px;
+    -o-border-radius:       26px;
+    -ms-border-radius:      26px;
+    -moz-box-shadow:    1px 3px 7px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 3px 7px rgba(0,0,0,0.5);
+    box-shadow:         1px 3px 7px rgba(0,0,0,0.5);
+    font-size: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+
 
 /* misc */
 .label {
@@ -199,13 +226,26 @@ h5 {
         margin: 150px auto 200px auto;
     }
 
+    .drawing-ul {
+        padding-left: 20px;
+    }
+
+    .drawing-ul li {
+        margin-left: 0.5em;
+    }
+
 }
 
 @media (max-width: 600px) {
 
+
     .paperfold p {
         padding: 10px 20px 10px 40px;
 
+    }
+
+    .fold {
+        height: 140px;
     }
 
     .modal-img {
@@ -213,6 +253,16 @@ h5 {
         height: auto;
     }
 
+    ul {
+        padding-left: 0.5em;
+    }
+    .drawing-ul {
+        padding-left: 20px;
+    }
+
+    .drawing-ul li {
+        margin-left: 0;
+    }
 
 }
 
