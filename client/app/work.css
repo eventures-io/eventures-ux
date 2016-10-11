@@ -91,15 +91,6 @@
 }
 
 
-.project-content > ol {
-    margin-left: 1em;
-}
-
-.project-content > ol > li {
-    padding-bottom: 0.5em;
-
-}
-
 .work-footer {
    position: fixed;
    bottom: 50px;

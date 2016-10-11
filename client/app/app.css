@@ -253,9 +253,16 @@ h5 {
         height: auto;
     }
 
-    ul {
+    ul{
         padding-left: 0.5em;
+
     }
+
+    ol {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
     .drawing-ul {
         padding-left: 20px;
     }
