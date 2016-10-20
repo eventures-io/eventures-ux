@@ -1,6 +1,7 @@
 'use strict';
 // TODO follow best practices JQuery
 var activePage = 'work';
+var paperfold;
 
 function openImageModal(imageName) {
     $('<div><img src="/assets/images/' + imageName + '" class="modal-img"></div>').appendTo('body').modal({
@@ -72,28 +73,32 @@ function navigate(section) {
         activePage = section;
         if (section === 'work') {
             $('.read-more').click(function (event) {
-                var project = $(event.target).data('project');
-                var article = $('article[data-project="' + project + '"]');
-                var closeIcon = article.find('.close-icon');
-                var projectContent = article.find('.project-content');
-                if (projectContent.hasClass('expanded')) {
-                    projectContent.removeClass('expanded');
-                    setCollapseButtonText($(this), true);
-                    setCloseIconVisible(closeIcon, false);
-                } else {
-                    collapseOpenProjects();
-                    projectContent.addClass('expanded');
-                    setCollapseButtonText($(this), false);
-                    setCloseIconVisible(closeIcon, true);
-                }
+                toggleProject(event);
+            });
+            $('.project-title').click(function (event) {
+                toggleProject(event);
             });
 
-            $('.close-icon').click(function () {
-                collapseOpenProjects();
-            });
         }
     });
 };
+
+function toggleProject(event) {
+    var article = $(event.target).closest('article');
+    var project = article.data('project');
+    var closeIcon = article.find('.close-icon');
+    var projectContent = article.find('.project-content');
+    if (projectContent.hasClass('expanded')) {
+        projectContent.removeClass('expanded');
+        setCollapseButtonText(article.find('.read-more'), true);
+        setCloseIconVisible(closeIcon, false);
+    } else {
+        collapseOpenProjects();
+        projectContent.addClass('expanded');
+        setCollapseButtonText(article.find('.read-more'), false);
+        setCloseIconVisible(closeIcon, true);
+    }
+}
 
 $(document).ready(function () {
 
@@ -109,7 +114,7 @@ $(document).ready(function () {
     });
 
     setInterval(function (event) {
-        if (didScroll && activePage !== 'contact') {
+        if (didScroll) {
             didScroll = false;
             var fromTop = $(this).scrollTop();
 
@@ -123,14 +128,14 @@ $(document).ready(function () {
                 return false;
             }
 
-            if (fromTop > 30 && scrollDirection === 'up' && !isPaperfoldClosed) {
+            if (fromTop > 0 && scrollDirection === 'up' && !isPaperfoldClosed) {
                 paperfold.close();
                 $('.main').addClass('fold-closed');
                 isPaperfoldClosed = true;
             }
 
         }
-    }, 250);
+    }, 450);
 
     $('.menu-link').on('click', function (event) {
         event.preventDefault();
@@ -140,11 +145,9 @@ $(document).ready(function () {
         navigate(section);
     });
 
-    var vw = $(document).width();
-
-    var paperfold = $('.paperfold').paperfold({
-        duration: 600,
-        folds: vw < 901 ? 2 : 1,
+    paperfold = $('.paperfold').paperfold({
+        duration: 400,
+        folds: 1,
         //maxFoldHeight: 40,
         isOpen: true,
         topShadow: 'linear-gradient(transparent, rgba(169 ,169, 169, 0.4)',
@@ -152,19 +155,8 @@ $(document).ready(function () {
     });
 
 
-    //$(window).resize(function() {
-    //    if(screen.width == window.innerWidth){
-    //        alert("you are on normal page with 100% zoom");
-    //    } else if(screen.width > window.innerWidth){
-    //        alert("you have zoomed in the page i.e more than 100%");
-    //    } else {
-    //        alert("you have zoomed out i.e less than 100%")
-    //    }
-    //});
-
 
 });
-
 
 
 
